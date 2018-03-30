@@ -19,6 +19,8 @@ public class MainActivity extends Activity {
         // activity_main layout will load the login fragment that allows access to
         //  other fragments
         setContentView(R.layout.activity_main);
+
+        // Attempt to make Scanner work for android (WORKS! Fuck yeah.)
         loadInventory();
     }
 
@@ -46,7 +48,8 @@ public class MainActivity extends Activity {
                 .commit();
     }
 
-    public void loadInventory() {
+    public void loadInventory()
+    {
         try {
             Scanner fileInput = new Scanner(getAssets().open("inventory.txt"));
             String fileLine;
@@ -67,8 +70,17 @@ public class MainActivity extends Activity {
 
             }
             fileInput.close();
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
         }
+    }
+
+    public static void runBatchFiles()
+    {
+        // Order of inputs
+        // Vendor incoming, Fulfillment of Backlog Orders
+        // Today's orders, Vendor Outgoing
     }
 }

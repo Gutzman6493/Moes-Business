@@ -56,6 +56,7 @@ public class InventoryView extends ListFragment
         @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
     {
-
+        // Load Item layout, once in item layout get that item's info for the
+        // widgets to use so we don't need to make multiple layouts
     }
 }
