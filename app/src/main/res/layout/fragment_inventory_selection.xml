@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/background_light">
+
+    <TextView
+        android:id="@+id/businessTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="Moe's Supply Co. -Manager"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/wh1Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Warehouse #1" />
+
+    <Button
+        android:id="@+id/wh2Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Warehouse #2" />
+
+    <Button
+        android:id="@+id/wh3Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Warehouse #3" />
+
+    <Button
+        android:id="@+id/wh4Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Warehouse #4" />
+
+    <Button
+        android:id="@+id/wh5Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Warehouse #5" />
+
+    <Button
+        android:id="@+id/wh6Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Warehouse #6" />
+
+    <Button
+        android:id="@+id/wh7Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Warehouse #7" />
+
+    <Button
+        android:id="@+id/wh8Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Warehouse #8" />
+
+    <Button
+        android:id="@+id/globalBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Global" />
+</LinearLayout>

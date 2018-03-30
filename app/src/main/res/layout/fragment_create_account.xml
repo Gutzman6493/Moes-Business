@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light">
+
+    <TextView
+        android:id="@+id/businessTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="38dp"
+        android:fontFamily="serif"
+        android:text="Moe's Supply Co."
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/usernameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/businessTitle"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Username"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/passwordText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/usernameText"
+        android:layout_alignRight="@+id/usernameText"
+        android:layout_below="@+id/usernameText"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Password"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/firstNameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passwordText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="First Name"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/lastNameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/firstNameText"
+        android:layout_alignStart="@+id/firstNameText"
+        android:layout_below="@+id/firstNameText"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Last Name"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/stAddressText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lastNameText"
+        android:layout_alignStart="@+id/lastNameText"
+        android:layout_below="@+id/lastNameText"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Street Address"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/cityText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/stateText"
+        android:layout_alignStart="@+id/stateText"
+        android:layout_below="@+id/stAddressText"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="City"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/stateText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/stAddressText"
+        android:layout_alignStart="@+id/stAddressText"
+        android:layout_below="@+id/cityText"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="State"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/zipcodeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/stateText"
+        android:layout_alignStart="@+id/stateText"
+        android:layout_below="@+id/stateText"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Zipcode"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/createBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zipcodeText"
+        android:layout_marginTop="5dp"
+        android:text="Create Account"
+        android:textAlignment="center" />
+
+</RelativeLayout>
