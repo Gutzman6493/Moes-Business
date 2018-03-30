@@ -42,11 +42,10 @@ public class InventoryView extends ListFragment
         super.onCreate(savedInstanceState);
         invList = (ListView) view.findViewById(R.id.invList);
         ArrayList test = new ArrayList<String>(0);
-        test.add("Item1");
-        test.add("Item2");
-        test.add("Item3");
-        test.add("Item4");
-        test.add("Item5");
+        for(int i = 0; i < Inventory.TheInventory.size(); i++)
+        {
+            test.add(Inventory.TheInventory.get(i).getItemName());
+        }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1, test);
 
