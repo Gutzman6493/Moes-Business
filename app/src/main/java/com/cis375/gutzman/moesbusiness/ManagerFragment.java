@@ -55,7 +55,7 @@ public class ManagerFragment extends Fragment
         switch(v.getId())
         {
             case R.id.inventoryBtn:
-                ManagerActivity.showInventorySelection();
+                ManagerActivity.showInventory();
                 break;
             case R.id.statusBtn:
                 break;

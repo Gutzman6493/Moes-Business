@@ -19,22 +19,21 @@ public class ManagerActivity extends Activity
         setContentView(R.layout.activity_manager);
     }
 
-    public static void showInventorySelection()
-    {
-        //Create fragment class object and set it to the right layout
-        ManagerInvSelectionFragment selectFrag = new ManagerInvSelectionFragment();
-        fragmentManager.beginTransaction()
-                .add(R.id.fragmentContainer, selectFrag)
-                .addToBackStack(null)
-                .commit();
-    }
-
-    public static void showInventory(int id)
+    public static void showInventory()
     {
         //Create fragment class object and set it to the right layout
         InventoryView inventoryView = new InventoryView();
         fragmentManager.beginTransaction()
                 .add(R.id.fragmentContainer, inventoryView)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public static void showItem()
+    {
+        ManagerItemViewFragment itemView = new ManagerItemViewFragment();
+        fragmentManager.beginTransaction()
+                .add(R.id.fragmentContainer, itemView)
                 .addToBackStack(null)
                 .commit();
     }

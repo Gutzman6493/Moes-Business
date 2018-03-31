@@ -23,6 +23,7 @@ public class Item
     private double promotionalRate; // EXTRA
     private int minOpAmount;
     //private Vendor itemSeller;
+    private String vendorName;
     //private double[] itemFreq; // Frequencies for how much each warehouse sells EXTRA
     private boolean backOrderFlag = false;
 
@@ -31,14 +32,14 @@ public class Item
     //FIXME ADD VENDOR INFO WHEN VENDOR CLASS IS MADE
     {
         this.itemName = itemName;
-        this.itemDesc = "";
+        this.itemDesc = "This is an item sold by Moe";
         this.itemId = itemId;
         this.promotionalRate = 0.0;
         this.itemCost = itemCost;
         this.itemReorderValue = itemReorderValue;
         this.minOpAmount = minOpAmount;
         itemStock = new long[9];
-        //itemFreq = new double[8];
+        vendorName = "NEEDS FIXING";
     }
     public double getItemCost()
     {
@@ -72,9 +73,8 @@ public class Item
     {
         return itemStock[index];
     }
-    /*public double getFreqLevel(int index)
+    public String getVendorName()
     {
-        return itemFreq[index];
+        return vendorName;
     }
-    */
 }

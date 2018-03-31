@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@android:color/background_light">
+
+    <TextView
+        android:id="@+id/itemNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="61dp"
+        android:text="Item Name:" />
+
+    <TextView
+        android:id="@+id/itemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/itemNameLabel"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/itemNameLabel"
+        android:layout_toRightOf="@+id/itemNameLabel"
+        android:text="itemName" />
+
+    <TextView
+        android:id="@+id/itemIdLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/itemNameLabel"
+        android:layout_alignStart="@+id/itemNameLabel"
+        android:layout_below="@+id/itemNameLabel"
+        android:layout_marginTop="11dp"
+        android:text="Item Id:" />
+
+    <TextView
+        android:id="@+id/itemId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/itemName"
+        android:layout_alignStart="@+id/itemName"
+        android:layout_alignTop="@+id/itemIdLabel"
+        android:text="ItemID" />
+
+    <TextView
+        android:id="@+id/itemCostLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/itemIdLabel"
+        android:layout_alignStart="@+id/itemIdLabel"
+        android:layout_below="@+id/itemIdLabel"
+        android:layout_marginTop="12dp"
+        android:text="Item Cost:" />
+
+    <TextView
+        android:id="@+id/itemCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/itemId"
+        android:layout_alignStart="@+id/itemId"
+        android:layout_alignTop="@+id/itemCostLabel"
+        android:text="ItemCost" />
+
+    <TextView
+        android:id="@+id/globalInvLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/itemCostLabel"
+        android:layout_alignStart="@+id/itemCostLabel"
+        android:layout_below="@+id/itemCostLabel"
+        android:layout_marginTop="12dp"
+        android:text="Global Stock:" />
+
+    <TextView
+        android:id="@+id/globalInv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/itemCost"
+        android:layout_alignStart="@+id/itemCost"
+        android:layout_alignTop="@+id/globalInvLabel"
+        android:text="GlobalInv" />
+
+    <TextView
+        android:id="@+id/wh1Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/globalInvLabel"
+        android:layout_alignStart="@+id/globalInvLabel"
+        android:layout_below="@+id/globalInvLabel"
+        android:layout_marginTop="12dp"
+        android:text="WH 1 Inv:" />
+
+    <TextView
+        android:id="@+id/wh1Inv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/globalInv"
+        android:layout_alignStart="@+id/globalInv"
+        android:layout_alignTop="@+id/wh1Label"
+        android:text="WH1Inv" />
+
+    <TextView
+        android:id="@+id/wh2Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wh1Label"
+        android:layout_alignStart="@+id/wh1Label"
+        android:layout_below="@+id/wh1Label"
+        android:layout_marginTop="12dp"
+        android:text="WH 2 Inv:" />
+
+    <TextView
+        android:id="@+id/wh2Inv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wh1Inv"
+        android:layout_alignStart="@+id/wh1Inv"
+        android:layout_alignTop="@+id/wh2Label"
+        android:text="WH2Inv" />
+
+    <TextView
+        android:id="@+id/wh3Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wh2Label"
+        android:layout_alignStart="@+id/wh2Label"
+        android:layout_below="@+id/wh2Label"
+        android:layout_marginTop="11dp"
+        android:text="WH 3 Inv:" />
+
+    <TextView
+        android:id="@+id/wh3Inv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wh2Inv"
+        android:layout_alignStart="@+id/wh2Inv"
+        android:layout_alignTop="@+id/wh3Label"
+        android:text="WH3Inv" />
+
+    <TextView
+        android:id="@+id/wh4Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wh3Label"
+        android:layout_alignStart="@+id/wh3Label"
+        android:layout_centerVertical="true"
+        android:text="WH 4 Inv:" />
+
+    <TextView
+        android:id="@+id/wh4Inv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wh3Inv"
+        android:layout_alignStart="@+id/wh3Inv"
+        android:layout_alignTop="@+id/wh4Label"
+        android:text="WH4Inv" />
+
+    <TextView
+        android:id="@+id/wh5Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wh4Label"
+        android:layout_alignStart="@+id/wh4Label"
+        android:layout_below="@+id/wh4Label"
+        android:layout_marginTop="13dp"
+        android:text="WH 5 Inv:" />
+
+    <TextView
+        android:id="@+id/wh5Inv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/wh5Label"
+        android:layout_alignLeft="@+id/wh4Inv"
+        android:layout_alignStart="@+id/wh4Inv"
+        android:text="WH5Inv" />
+
+    <TextView
+        android:id="@+id/wh6Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wh5Label"
+        android:layout_alignStart="@+id/wh5Label"
+        android:layout_below="@+id/wh5Label"
+        android:layout_marginTop="14dp"
+        android:text="WH 6 Inv:" />
+
+    <TextView
+        android:id="@+id/wh6Inv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/wh6Label"
+        android:layout_alignLeft="@+id/wh5Inv"
+        android:layout_alignStart="@+id/wh5Inv"
+        android:text="WH6Inv" />
+
+    <TextView
+        android:id="@+id/wh7Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wh6Label"
+        android:layout_alignStart="@+id/wh6Label"
+        android:layout_below="@+id/wh6Label"
+        android:layout_marginTop="11dp"
+        android:text="WH 7 Inv:" />
+
+    <TextView
+        android:id="@+id/wh7Inv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wh6Inv"
+        android:layout_alignStart="@+id/wh6Inv"
+        android:layout_alignTop="@+id/wh7Label"
+        android:text="WH7Inv" />
+
+    <TextView
+        android:id="@+id/wh8Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wh7Label"
+        android:layout_alignStart="@+id/wh7Label"
+        android:layout_below="@+id/wh7Label"
+        android:layout_marginTop="12dp"
+        android:text="WH 8 Inv:" />
+
+    <TextView
+        android:id="@+id/wh8Inv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/wh8Label"
+        android:layout_alignLeft="@+id/wh7Inv"
+        android:layout_alignStart="@+id/wh7Inv"
+        android:text="WH8Inv" />
+
+    <TextView
+        android:id="@+id/reorderLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wh8Label"
+        android:layout_alignStart="@+id/wh8Label"
+        android:layout_below="@+id/wh8Label"
+        android:layout_marginTop="14dp"
+        android:text="Reorder Num:" />
+
+    <TextView
+        android:id="@+id/reorderNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/reorderLabel"
+        android:layout_alignLeft="@+id/wh8Inv"
+        android:layout_alignStart="@+id/wh8Inv"
+        android:text="ReorderAmount" />
+
+    <TextView
+        android:id="@+id/vendorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/reorderLabel"
+        android:layout_alignStart="@+id/reorderLabel"
+        android:layout_below="@+id/reorderLabel"
+        android:layout_marginTop="11dp"
+        android:text="Vendor:" />
+
+    <TextView
+        android:id="@+id/vendorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/vendorLabel"
+        android:layout_toEndOf="@+id/reorderLabel"
+        android:layout_toRightOf="@+id/reorderLabel"
+        android:text="VendorName" />
+
+    <TextView
+        android:id="@+id/itemDescLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/vendorLabel"
+        android:layout_alignStart="@+id/vendorLabel"
+        android:layout_below="@+id/vendorLabel"
+        android:layout_marginTop="12dp"
+        android:text="Item Desc:" />
+
+    <TextView
+        android:id="@+id/itemDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/vendorName"
+        android:layout_alignStart="@+id/vendorName"
+        android:layout_alignTop="@+id/itemDescLabel"
+        android:text="ItemDesc" />
+</RelativeLayout>

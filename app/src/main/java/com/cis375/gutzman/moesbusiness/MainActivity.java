@@ -60,11 +60,12 @@ public class MainActivity extends Activity {
 
                 Item temp = new Item
                         (fileWords[0],
-                                Inventory.TheInventory.size() + 1,
-                                Double.parseDouble(fileWords[1]),
-                                Integer.parseInt(fileWords[2]),
-                                Integer.parseInt(fileWords[3]));
-                synchronized (Inventory.TheInventory) {
+                        Inventory.TheInventory.size(),
+                        Double.parseDouble(fileWords[1]),
+                        Integer.parseInt(fileWords[2]),
+                        Integer.parseInt(fileWords[3]));
+                synchronized (Inventory.TheInventory)
+                {
                     Inventory.TheInventory.add(temp);
                 }
 

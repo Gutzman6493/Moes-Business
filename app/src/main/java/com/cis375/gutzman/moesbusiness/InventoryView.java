@@ -11,6 +11,7 @@
 package com.cis375.gutzman.moesbusiness;
 
 import android.app.ListFragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,10 +22,15 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class InventoryView extends ListFragment
     implements AdapterView.OnItemClickListener
 {
     private ListView invList;
+    private SharedPreferences prefs;
+    private SharedPreferences.Editor editor;
+
     public InventoryView(){}
 
     @Override
@@ -51,6 +57,9 @@ public class InventoryView extends ListFragment
 
         invList.setAdapter(adapter);
         invList.setOnItemClickListener(this);
+
+        // Setup Preferences
+        prefs = this.getActivity().getSharedPreferences("preferences", MODE_PRIVATE);
     }
 
         @Override
@@ -58,5 +67,9 @@ public class InventoryView extends ListFragment
     {
         // Load Item layout, once in item layout get that item's info for the
         // widgets to use so we don't need to make multiple layouts
+        editor = prefs.edit();
+        editor.putInt("itemIndex", i);
+        editor.commit();
+        ManagerActivity.showItem();
     }
 }
