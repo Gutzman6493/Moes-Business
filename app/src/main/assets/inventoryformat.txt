@@ -1,0 +1,2 @@
+name category cost reorderValue minOpAmount vendorName globalInv wh1Inv wh2Inv wh3Inv wh4Inv wh5Inv wh6Inv wh7Inv wh8Inv
+itemDesc

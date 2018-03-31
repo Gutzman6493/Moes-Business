@@ -18,20 +18,7 @@ public class Inventory
     // Empty Constructor to give things access to inventory
     Inventory(){}
 
-    public void addItemFromManager
-    (String itemName, double itemCost, int itemReorderValue, int minOpAmount)
+    public void addItemFromManage()
     {
-        Item temp = new Item
-        (
-            itemName,
-            TheInventory.size()+1,
-            itemCost,
-            itemReorderValue,
-            minOpAmount
-        );
-        synchronized (TheInventory)
-        {
-            TheInventory.add(temp);
-        }
     }
 }

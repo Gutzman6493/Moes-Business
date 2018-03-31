@@ -53,17 +53,31 @@ public class MainActivity extends Activity {
         try {
             Scanner fileInput = new Scanner(getAssets().open("inventory.txt"));
             String fileLine;
+            String fileLine2;
             while (fileInput.hasNextLine()) {
                 fileLine = fileInput.nextLine();
+                fileLine2 = fileInput.nextLine(); // This will get the Item Desc since it's on its own line
                 fileLine = fileLine.replace("\n", " ");
                 String[] fileWords = fileLine.split(" ");
 
                 Item temp = new Item
-                        (fileWords[0],
-                        Inventory.TheInventory.size(),
-                        Double.parseDouble(fileWords[1]),
-                        Integer.parseInt(fileWords[2]),
-                        Integer.parseInt(fileWords[3]));
+                        (fileWords[0], // itemName
+                        fileWords[1],  // itemCategory
+                        Inventory.TheInventory.size(),    // itemId (will change if inventory changes)
+                        Double.parseDouble(fileWords[2]), // itemCost
+                        Integer.parseInt(fileWords[3]),   // reorderValue
+                        Integer.parseInt(fileWords[4]),   // minOpAmount
+                        fileWords[5],                     // vendorName
+                        Long.parseLong(fileWords[6]),     // globalInv#
+                        Long.parseLong(fileWords[7]),     // wh1Inv#
+                        Long.parseLong(fileWords[8]),     // wh2Inv#
+                        Long.parseLong(fileWords[9]),     // wh3Inv#
+                        Long.parseLong(fileWords[10]),     // wh4Inv#
+                        Long.parseLong(fileWords[11]),     // wh5Inv#
+                        Long.parseLong(fileWords[12]),     // wh6Inv#
+                        Long.parseLong(fileWords[13]),     // wh7Inv#
+                        Long.parseLong(fileWords[14]),     // wh8Inv#
+                        fileLine2);
                 synchronized (Inventory.TheInventory)
                 {
                     Inventory.TheInventory.add(temp);

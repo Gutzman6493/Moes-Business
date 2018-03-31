@@ -12,11 +12,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static android.content.Context.MODE_PRIVATE;
 
 public class ManagerItemViewFragment extends Fragment
+    implements View.OnClickListener
 {
     private TextView itemName;
     private TextView itemId;
@@ -33,9 +37,16 @@ public class ManagerItemViewFragment extends Fragment
     private TextView reorderNum;
     private TextView vendorName;
     private TextView itemDesc;
+    private TextView backorderFlag;
+    private TextView promotionRate;
+    private Button setRateBtn;
+    private EditText rateText;
+    private TextView category;
+    private TextView whLoc;
 
     private int itemIndex;
     private SharedPreferences prefs;
+    private Item temp;
 
     public ManagerItemViewFragment(){}
 
@@ -73,9 +84,15 @@ public class ManagerItemViewFragment extends Fragment
         reorderNum = (TextView) view.findViewById(R.id.reorderNum);
         vendorName = (TextView) view.findViewById(R.id.vendorName);
         itemDesc = (TextView) view.findViewById(R.id.itemDesc);
+        backorderFlag = (TextView) view.findViewById(R.id.backorderFlag);
+        promotionRate = (TextView) view.findViewById(R.id.promotionRate);
+        setRateBtn = (Button) view.findViewById(R.id.setRateBtn);
+        rateText = (EditText) view.findViewById(R.id.rateText);
+        category = (TextView) view.findViewById(R.id.category);
+        whLoc = (TextView) view.findViewById(R.id.whLoc);
 
         // Pull necessary info from inventory
-        Item temp = Inventory.TheInventory.get(itemIndex);
+        temp = Inventory.TheInventory.get(itemIndex);
         itemName.setText(temp.getItemName());
         itemId.setText(String.valueOf(temp.getItemId()));
         itemCost.setText("$" + String.valueOf(temp.getItemCost()));
@@ -91,5 +108,58 @@ public class ManagerItemViewFragment extends Fragment
         reorderNum.setText(String.valueOf(temp.getItemReorderValue()));
         vendorName.setText(temp.getVendorName()); // FIXME update when vendors are made
         itemDesc.setText(temp.getItemDesc());
+        backorderFlag.setText(String.valueOf(temp.getBackOrderFlag()));
+        promotionRate.setText(String.valueOf(temp.getPromotionalRate() * 100) + "%");
+        category.setText(temp.getCategory());
+        whLoc.setText(temp.getCategory() + " Dept.");
+
+        // Set onClick listeners
+        setRateBtn.setOnClickListener(this);
+        rateText.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        switch (v.getId())
+        {
+            case R.id.setRateBtn:
+                handleSet();
+                break;
+            case R.id.rateText:
+                rateText.setText("");
+                break;
+        }
+    }
+    public void handleSet()
+    {
+        String rateString = rateText.getText().toString();
+        double rate;
+        if(rateString.isEmpty())
+        {
+            Toast.makeText(this.getActivity().getApplicationContext(),
+                    "Please set a rate",
+                    Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            rate = Double.parseDouble(rateString);
+            // Check to make sure we have a valid rate
+            if((rate >= 0) && (rate <= 1))
+            {
+                synchronized (Inventory.TheInventory)
+                {
+                    temp.setPromotionalRate(rate);
+                }
+                itemCost.setText("$" + String.valueOf(temp.getItemCost()));
+                promotionRate.setText(String.valueOf(temp.getPromotionalRate() * 100) + "%");
+            }
+            else
+            {
+                Toast.makeText(this.getActivity().getApplicationContext(),
+                        "Please enter a valid rate (0-1)",
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }

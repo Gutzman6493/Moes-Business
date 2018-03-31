@@ -10,8 +10,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginStart="1dp"
         android:layout_marginTop="61dp"
         android:text="Item Name:" />
 
@@ -290,4 +290,108 @@
         android:layout_alignStart="@+id/vendorName"
         android:layout_alignTop="@+id/itemDescLabel"
         android:text="ItemDesc" />
+
+    <TextView
+        android:id="@+id/backorderLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/itemName"
+        android:layout_alignBottom="@+id/itemName"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_toLeftOf="@+id/promotionRate"
+        android:layout_toStartOf="@+id/promotionRate"
+        android:text="On BackOrder:" />
+
+    <TextView
+        android:id="@+id/backorderFlag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/backorderLabel"
+        android:layout_alignBottom="@+id/backorderLabel"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="False" />
+
+    <TextView
+        android:id="@+id/promotionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/itemCost"
+        android:layout_alignEnd="@+id/backorderLabel"
+        android:layout_alignRight="@+id/backorderLabel"
+        android:text="Current Promotion Rate:" />
+
+    <TextView
+        android:id="@+id/promotionRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/promotionLabel"
+        android:layout_alignBottom="@+id/promotionLabel"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="100%" />
+
+    <Button
+        android:id="@+id/setRateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/globalInv"
+        android:layout_alignLeft="@+id/promotionLabel"
+        android:layout_alignStart="@+id/promotionLabel"
+        android:text="Set New Rate"
+        android:textAllCaps="true"
+        android:textAppearance="@android:style/TextAppearance.Material.Small"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/rateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/setRateBtn"
+        android:layout_toEndOf="@+id/setRateBtn"
+        android:layout_toRightOf="@+id/setRateBtn"
+        android:ems="10"
+        android:hint="New Rate"
+        android:inputType="numberDecimal"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/categoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/wh1Inv"
+        android:layout_alignBottom="@+id/wh1Inv"
+        android:layout_toLeftOf="@+id/category"
+        android:layout_toStartOf="@+id/category"
+        android:text="Item Category:" />
+
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/categoryLabel"
+        android:layout_alignBottom="@+id/categoryLabel"
+        android:layout_alignEnd="@+id/whLoc"
+        android:layout_alignRight="@+id/whLoc"
+        android:text="ItemCategory" />
+
+    <TextView
+        android:id="@+id/warehouseLocLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/whLoc"
+        android:layout_alignLeft="@+id/categoryLabel"
+        android:layout_alignStart="@+id/categoryLabel"
+        android:text="Inside Warehouses Loc:" />
+
+    <TextView
+        android:id="@+id/whLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/wh3Inv"
+        android:layout_alignBottom="@+id/wh3Inv"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="Category Dept." />
 </RelativeLayout>
