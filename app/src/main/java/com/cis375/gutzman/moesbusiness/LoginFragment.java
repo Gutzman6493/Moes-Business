@@ -32,7 +32,6 @@ public class LoginFragment extends Fragment
     private Button createBtn;
     private static String username = "";
     private static String password = "";
-    private AllAccounts userAccounts;
     private boolean loggedInFlag;
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
@@ -65,22 +64,6 @@ public class LoginFragment extends Fragment
         loginBtn.setOnClickListener(this);
         forgotBtn.setOnClickListener(this);
         createBtn.setOnClickListener(this);
-
-        // Get the accounts
-        userAccounts = new AllAccounts();
-
-        // onCreate, check to see if the Accounts are empty, if so,
-        //  add from the file for manager accounts
-        userAccounts.addManagerAccounts();
-        /*if(userAccounts.TheAccounts.isEmpty())
-        {
-            userAccounts.addManagerAccounts();
-            // FIXME figure out how to read from a file in app
-
-            File path = getApplicationContext().getFilesDir();
-            userAccounts.addAccountFromFile(path);
-
-        }*/
 
         // Setup Preferences
         prefs = this.getActivity().getSharedPreferences("preferences", MODE_PRIVATE);
@@ -117,7 +100,7 @@ public class LoginFragment extends Fragment
 
         username = usernameText.getText().toString().trim();
         password = passwordText.getText().toString().trim();
-        loggedInFlag = userAccounts.loginUser(username, password);
+        loggedInFlag = AllAccounts.loginUser(username, password);
         if(loggedInFlag)
         {
             // Save the username to preferences for easier access to individual accounts
@@ -125,7 +108,7 @@ public class LoginFragment extends Fragment
             editor.putString("Username", username);
             editor.commit();
             // User successfully logged in, start right activity
-            if(userAccounts.checkManagerFlag(username))
+            if(AllAccounts.checkManagerFlag(username))
             {
                 // If they're the manager send them to the manager activity
                 startActivity(new Intent(getActivity(), ManagerActivity.class));

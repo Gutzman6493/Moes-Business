@@ -1,5 +1,7 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <map>
     <String name="Username"></String>
+    <boolean name="AppFirstRun">true</boolean>
+    <boolean name="CreatedAccount">false</boolean>
     <int name="itemIndex">0</int>
 </map>

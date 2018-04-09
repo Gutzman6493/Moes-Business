@@ -10,6 +10,7 @@ package com.cis375.gutzman.moesbusiness;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.io.FileOutputStream;
 
 public class CreateAccountFragment extends Fragment
     implements View.OnClickListener
@@ -108,6 +111,7 @@ public class CreateAccountFragment extends Fragment
                 created = handleCreate();
                 if(created)
                 {
+                    saveAccountsInternal();
                     Toast.makeText(this.getActivity().getApplicationContext(),
                             "Account Created",
                             Toast.LENGTH_SHORT).show();
@@ -159,4 +163,28 @@ public class CreateAccountFragment extends Fragment
         userAccounts.addAccount(temp);
         return true;
     }// End handleCreate
+    public void saveAccountsInternal()
+    {
+        String FILE_NAME = "AccountFile.txt";
+        Context context = this.getActivity().getApplication().getApplicationContext();
+        try
+        {
+            FileOutputStream fos = context.openFileOutput(FILE_NAME, Context.MODE_PRIVATE);
+            String outputString = "";
+            for(int i = 0; i < AllAccounts.TheAccounts.size(); i++)
+            {
+                outputString = outputString.concat
+                (
+                    AllAccounts.TheAccounts.get(i).getUsername() + " " +
+                    AllAccounts.TheAccounts.get(i).getPassword() + "\n"
+                );
+            }
+            fos.write(outputString.getBytes());
+            fos.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 }

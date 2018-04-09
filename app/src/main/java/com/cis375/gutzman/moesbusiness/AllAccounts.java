@@ -17,45 +17,17 @@ public class AllAccounts
 {
     static ArrayList<Account> TheAccounts = new ArrayList<Account>(0);
     // For development purposes (managers login info kept here in array)
-    private String[][] managers = new String[][]
+    private static String[][] managers = new String[][]
             {
                     {"moe", "moe01"},
-                    {"root", "root01"}
+                    {"root", "root01"},
+                    {"admin", "admin01"}
             };
 
     public AllAccounts() {} // Empty Constructor
 
-    // Should only be used to create manager accounts
-    public void addAccountFromFile(File path)
-    {
-        try
-        {
-            File accountFile = new File("AccountFile.txt");
-            if(accountFile.exists())
-            {
-                String fileLine;
-                Scanner fileInput = new Scanner(accountFile);
-                Account temp;
-                while (fileInput.hasNextLine())
-                {
-                    fileLine = fileInput.nextLine();
-                    fileLine = fileLine.replace("\n", " ");
-                    String[] fileWords = fileLine.split(" ");
-                    temp = new Account(fileWords[0], fileWords[1]);
-                    temp.setManagerFlag(true);
-                    TheAccounts.add(temp);
-                }
-                fileInput.close();
-            }
-        }
-        catch (IOException e)
-        {
-            System.out.print(e);
-        }
-    }// End addAccountFromFile
-
     // Used for customers to create account
-    public void addAccount(Account newAccount)
+    public static void addAccount(Account newAccount)
     {
         synchronized(TheAccounts)
         {
@@ -64,7 +36,7 @@ public class AllAccounts
     }// End addAccount
 
     // Login the user (for both customer and manager)
-    public boolean loginUser(String uN, String pW)
+    public static boolean loginUser(String uN, String pW)
     {
         for(int i = 0; i < TheAccounts.size(); i++)
         {
@@ -79,7 +51,7 @@ public class AllAccounts
         return false;
     }// End login
 
-    public boolean checkManagerFlag(String uN)
+    public static boolean checkManagerFlag(String uN)
     {
         for (int i = 0; i < TheAccounts.size(); i++)
         {
@@ -92,7 +64,7 @@ public class AllAccounts
         return false;
     }// End checkManagerFlag
 
-    public String handleForgotPassword(String uN)
+    public static String handleForgotPassword(String uN)
     {
         for (int i = 0; i < TheAccounts.size(); i++)
         {
@@ -113,16 +85,13 @@ public class AllAccounts
     }// End handleForgotPassword
 
     // For development purposes till fixed later
-    public void addManagerAccounts()
+    public static void addManagerAccounts()
     {
-        synchronized(TheAccounts)
+        for(int i = 0; i < managers.length; i++)
         {
-            for(int i = 0; i < managers.length; i++)
-            {
-                Account temp = new Account(managers[i][0], managers[i][1]);
-                temp.setManagerFlag(true);
-                TheAccounts.add(temp);
-            }
+            Account temp = new Account(managers[i][0], managers[i][1]);
+            temp.setManagerFlag(true);
+            AllAccounts.addAccount(temp);
         }
 
     }// End addManagerAccounts

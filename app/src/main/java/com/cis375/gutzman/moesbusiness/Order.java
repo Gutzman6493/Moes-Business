@@ -13,5 +13,5 @@ package com.cis375.gutzman.moesbusiness;
 
 public class Order
 {
-
+    
 }

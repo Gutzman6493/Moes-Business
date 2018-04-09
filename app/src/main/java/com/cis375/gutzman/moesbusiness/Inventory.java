@@ -18,7 +18,11 @@ public class Inventory
     // Empty Constructor to give things access to inventory
     Inventory(){}
 
-    public void addItemFromManage()
+    public static void addItem(Item newItem)
     {
+        synchronized (TheInventory)
+        {
+            TheInventory.add(newItem);
+        }
     }
 }
