@@ -4,11 +4,6 @@
     File Purpose: Item class. Holds all info for each
         individual item.
 */
-/*
-    FIXME CURRENT FIXMES:
-    Handle Vendors
-    Create setters for necessary variables
-*/
 package com.cis375.gutzman.moesbusiness;
 
 public class Item

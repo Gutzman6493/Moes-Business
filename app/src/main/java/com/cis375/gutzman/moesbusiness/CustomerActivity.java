@@ -2,11 +2,14 @@ package com.cis375.gutzman.moesbusiness;
 
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 public class CustomerActivity extends Activity
 {
     private static FragmentManager fragmentManager;
+    static Account customer;
+    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -17,12 +20,30 @@ public class CustomerActivity extends Activity
         // activity_customer layout will load the customer fragment that allows access to
         //  other fragments
         setContentView(R.layout.activity_customer);
+
+        // Setup Preferences
+        prefs = getSharedPreferences("preferences", MODE_PRIVATE);
+
+        // Get user's account
+        customer = AllAccounts.getAccount(prefs.getString("Username", ""));
+    }
+
+    // Add an item to customers cart
+    public static void addToTheirCart(String itemName, String itemAmount)
+    {
+        if(customer != null)
+            customer.addToCart(itemName, itemAmount);
     }
 
     // Show cart fragment
     public static void showCart()
     {
-
+        //Create fragment class object and set it to the right layout
+        CustomerCartFragment itemView = new CustomerCartFragment();
+        fragmentManager.beginTransaction()
+                .add(R.id.fragmentContainer, itemView)
+                .addToBackStack(null)
+                .commit();
     }
 
     // Show customer the inventory
@@ -39,13 +60,17 @@ public class CustomerActivity extends Activity
     // Show customer their past orders
     public static void showPastOrders()
     {
-
+        CustomerPastOrdersFragment itemView = new CustomerPastOrdersFragment();
+        fragmentManager.beginTransaction()
+                .add(R.id.fragmentContainer, itemView)
+                .addToBackStack(null)
+                .commit();
     }
 
     // Show customer's item view
     public static void showItem()
     {
-        ManagerItemViewFragment itemView = new ManagerItemViewFragment();
+        CustomerItemViewFragment itemView = new CustomerItemViewFragment();
         fragmentManager.beginTransaction()
                 .add(R.id.fragmentContainer, itemView)
                 .addToBackStack(null)

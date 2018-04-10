@@ -18,7 +18,7 @@ public class Account
     private String city;
     private String state;
     private boolean managerFlag = false;
-    //private ArrayList<Item> shoppingCart; // FIXME will implement later
+    private ArrayList<String[]> shoppingCart;
 
     public Account() {} // Empty Constructor
 
@@ -26,6 +26,7 @@ public class Account
     {
         this.username = username;
         this.password = password;
+        shoppingCart = new ArrayList<String[]>(0);
     }
 
     // GETTERS AND SETTERS FOLLOW
@@ -95,5 +96,17 @@ public class Account
         }
 
         return "Fuck off";
+    }
+
+    public void addToCart(String itemName, String itemAmount)
+    {
+        String[] itemAndQuantity = {itemName, itemAmount};
+        shoppingCart.add(itemAndQuantity);
+    }
+
+    // Return the shopping cart for use
+    public ArrayList<String[]> getShoppingCart()
+    {
+        return shoppingCart;
     }
 }

@@ -6,12 +6,7 @@
 */
 package com.cis375.gutzman.moesbusiness;
 
-import android.content.Context;
-import android.util.Log;
-import android.widget.Toast;
 import java.util.ArrayList;
-import java.io.*;
-import java.util.*;
 
 public class AllAccounts
 {
@@ -95,4 +90,18 @@ public class AllAccounts
         }
 
     }// End addManagerAccounts
+
+    // Get the customer's account
+    public static Account getAccount(String username)
+    {
+        for(int i = 0; i < TheAccounts.size(); i++)
+        {
+            if(TheAccounts.get(i).getUsername().equals(username))
+            {
+                return TheAccounts.get(i);
+            }
+        }
+
+        return null;
+    }
 }

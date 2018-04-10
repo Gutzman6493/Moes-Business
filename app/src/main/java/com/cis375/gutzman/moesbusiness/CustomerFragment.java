@@ -8,7 +8,6 @@
 */
 package com.cis375.gutzman.moesbusiness;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -56,11 +55,13 @@ public class CustomerFragment extends Fragment
         switch (view.getId())
         {
             case R.id.cartBtn:
+                CustomerActivity.showCart();
                 break;
             case R.id.itemBtn:
                 CustomerActivity.showInventory();
                 break;
             case R.id.pastOrdersBtn:
+                CustomerActivity.showPastOrders();
                 break;
         }
     }

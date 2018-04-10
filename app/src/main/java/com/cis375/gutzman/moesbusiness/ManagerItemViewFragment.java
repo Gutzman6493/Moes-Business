@@ -106,7 +106,7 @@ public class ManagerItemViewFragment extends Fragment
         wh7Inv.setText(String.valueOf(temp.getStockAmount(7)));
         wh8Inv.setText(String.valueOf(temp.getStockAmount(8)));
         reorderNum.setText(String.valueOf(temp.getItemReorderValue()));
-        vendorName.setText(temp.getVendorName()); // FIXME update when vendors are made
+        vendorName.setText(temp.getVendorName());
         itemDesc.setText(temp.getItemDesc());
         backorderFlag.setText(String.valueOf(temp.getBackOrderFlag()));
         promotionRate.setText(String.valueOf(temp.getPromotionalRate() * 100) + "%");

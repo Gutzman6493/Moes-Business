@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:clickable="true">
 
     <TextView
         android:id="@+id/itemNameLabel"
@@ -8,19 +10,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="1dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="38dp"
         android:text="Item Name:" />
 
     <TextView
         android:id="@+id/itemName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/itemNameLabel"
         android:layout_alignBottom="@+id/itemNameLabel"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
         android:layout_toEndOf="@+id/itemNameLabel"
         android:layout_toRightOf="@+id/itemNameLabel"
         android:text="itemName" />
@@ -29,66 +27,70 @@
         android:id="@+id/itemCostLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/itemNameLabel"
-        android:layout_alignStart="@+id/itemNameLabel"
-        android:layout_below="@+id/itemIdLabel"
-        android:layout_marginTop="12dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/itemNameLabel"
+        android:layout_marginTop="14dp"
         android:text="Item Cost:" />
 
     <TextView
         android:id="@+id/itemCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/itemName"
-        android:layout_alignStart="@+id/itemName"
-        android:layout_alignTop="@+id/itemCostLabel"
+        android:layout_alignBaseline="@+id/itemCostLabel"
+        android:layout_alignBottom="@+id/itemCostLabel"
+        android:layout_toEndOf="@+id/itemNameLabel"
+        android:layout_toRightOf="@+id/itemNameLabel"
         android:text="ItemCost" />
 
     <TextView
         android:id="@+id/globalInvLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/itemCostLabel"
-        android:layout_alignStart="@+id/itemCostLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/itemCostLabel"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:text="Global Stock:" />
 
     <TextView
         android:id="@+id/globalInv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/itemCost"
-        android:layout_alignStart="@+id/itemCost"
-        android:layout_alignTop="@+id/globalInvLabel"
+        android:layout_alignBaseline="@+id/globalInvLabel"
+        android:layout_alignBottom="@+id/globalInvLabel"
+        android:layout_toEndOf="@+id/backorderLabel"
+        android:layout_toRightOf="@+id/backorderLabel"
         android:text="GlobalInv" />
 
     <TextView
         android:id="@+id/itemDescLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/backorderLabel"
-        android:layout_toLeftOf="@+id/itemName"
-        android:layout_toStartOf="@+id/itemName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/globalInvLabel"
+        android:layout_marginTop="27dp"
         android:text="Item Desc:" />
 
     <TextView
         android:id="@+id/itemDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/itemName"
-        android:layout_alignRight="@+id/itemName"
-        android:layout_below="@+id/itemName"
-        android:layout_marginTop="57dp"
+        android:layout_alignBaseline="@+id/itemDescLabel"
+        android:layout_alignBottom="@+id/itemDescLabel"
+        android:layout_toEndOf="@+id/itemDescLabel"
+        android:layout_toRightOf="@+id/itemDescLabel"
         android:text="ItemDesc" />
 
     <TextView
         android:id="@+id/backorderLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/itemDesc"
-        android:layout_toLeftOf="@+id/backorderFlag"
-        android:layout_toStartOf="@+id/backorderFlag"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/itemDescLabel"
+        android:layout_marginTop="18dp"
         android:text="On BackOrder:" />
 
     <TextView
@@ -97,7 +99,73 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/backorderLabel"
         android:layout_alignBottom="@+id/backorderLabel"
+        android:layout_toEndOf="@+id/backorderLabel"
+        android:layout_toRightOf="@+id/backorderLabel"
+        android:text="False" />
+
+    <TextView
+        android:id="@+id/categoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/category"
+        android:layout_alignBottom="@+id/category"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_toLeftOf="@+id/category"
+        android:layout_toStartOf="@+id/category"
+        android:text="Item Category:" />
+
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/itemName"
+        android:layout_alignBottom="@+id/itemName"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="False" />
+        android:text="ItemCategory" />
+
+    <EditText
+        android:id="@+id/amountTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/backorderLabel"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:hint="Amount"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/addToCartBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/amountTxt"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/amountTxt"
+        android:layout_toRightOf="@+id/amountTxt"
+        android:text="Add To Cart" />
+
+    <TextView
+        android:id="@+id/similiarItemsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/amountTxt"
+        android:layout_marginTop="34dp"
+        android:text="Items in the same category:" />
+
+    <ListView
+        android:id="@+id/itemList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/amountTxt"
+        android:layout_marginTop="58dp" />
+
 </RelativeLayout>

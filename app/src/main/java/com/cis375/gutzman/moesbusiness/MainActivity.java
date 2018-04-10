@@ -4,14 +4,12 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -33,7 +31,7 @@ public class MainActivity extends Activity
         //  other fragments
         setContentView(R.layout.activity_main);
 
-        // Attempt to make Scanner work for android (WORKS! Fuck yeah.) Only for assets (Readonly)
+        // Attempt to make Scanner work for android (WORKS!) Only for assets (Readonly)
         if(fileExist("inventory.txt") && fileExist("AccountFile.txt"))
         {
             // If these files exist load them
@@ -241,6 +239,10 @@ public class MainActivity extends Activity
                         Toast.LENGTH_SHORT).show();
                 loadFlag = true;
             }
+            else
+            {
+                loadFlag = false;
+            }
 
         }
     }
@@ -280,6 +282,10 @@ public class MainActivity extends Activity
                         "Accounts internal was empty",
                         Toast.LENGTH_SHORT).show();
                 loadFlag = true;
+            }
+            else
+            {
+                loadFlag = false;
             }
 
         }
