@@ -33,8 +33,6 @@ public class MainActivity extends Activity
         //  other fragments
         setContentView(R.layout.activity_main);
 
-        AllAccounts accounts = new AllAccounts();
-        Inventory inventory = new Inventory();
         // Attempt to make Scanner work for android (WORKS! Fuck yeah.) Only for assets (Readonly)
         if(fileExist("inventory.txt") && fileExist("AccountFile.txt"))
         {

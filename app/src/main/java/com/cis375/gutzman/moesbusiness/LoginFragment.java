@@ -111,6 +111,9 @@ public class LoginFragment extends Fragment
             if(AllAccounts.checkManagerFlag(username))
             {
                 // If they're the manager send them to the manager activity
+                editor = prefs.edit();
+                editor.putBoolean("accountFile", true);
+                editor.commit();
                 startActivity(new Intent(getActivity(), ManagerActivity.class));
                 Toast.makeText(this.getActivity().getApplicationContext(),
                         "Simulate Manager Activity Opened",
@@ -119,7 +122,10 @@ public class LoginFragment extends Fragment
             else
             {
                 // They're not the manager, send them to the customer activity
-                //startActivity(new Intent(LoginActivity.this, CustomerActivity.class));
+                editor = prefs.edit();
+                editor.putBoolean("accountFile", false);
+                editor.commit();
+                startActivity(new Intent(getActivity(), CustomerActivity.class));
                 Toast.makeText(this.getActivity().getApplicationContext(),
                         "Simulate Customer Activity Opened",
                         Toast.LENGTH_SHORT).show();

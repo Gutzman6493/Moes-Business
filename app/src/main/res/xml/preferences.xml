@@ -2,6 +2,6 @@
 <map>
     <String name="Username"></String>
     <boolean name="AppFirstRun">true</boolean>
-    <boolean name="CreatedAccount">false</boolean>
+    <boolean name="accountFlag">false</boolean>
     <int name="itemIndex">0</int>
 </map>

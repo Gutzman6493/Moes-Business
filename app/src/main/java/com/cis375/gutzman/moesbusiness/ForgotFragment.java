@@ -28,7 +28,6 @@ public class ForgotFragment extends Fragment
     private Button getBtn;
     private TextView pwTitleText;
     private TextView passwordText;
-    private AllAccounts userAccounts;
 
     public ForgotFragment() {}
 
@@ -44,9 +43,6 @@ public class ForgotFragment extends Fragment
     public void onViewCreated(View view, Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
-        // Get all the accounts
-        userAccounts = new AllAccounts();
 
         // Assign widget variables
         usernameText = (EditText) view.findViewById(R.id.usernameText);
@@ -82,7 +78,7 @@ public class ForgotFragment extends Fragment
     {
         String username = usernameText.getText().toString();
         String password;
-        password = userAccounts.handleForgotPassword(username);
+        password = AllAccounts.handleForgotPassword(username);
         pwTitleText.setVisibility(View.VISIBLE);
         passwordText.setText(password);
         passwordText.setVisibility(View.VISIBLE);

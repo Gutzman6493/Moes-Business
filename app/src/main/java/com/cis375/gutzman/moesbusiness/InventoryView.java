@@ -70,6 +70,13 @@ public class InventoryView extends ListFragment
         editor = prefs.edit();
         editor.putInt("itemIndex", i);
         editor.commit();
-        ManagerActivity.showItem();
+        if (prefs.getBoolean("accountFlag", true))
+        {
+            ManagerActivity.showItem();
+        }
+        else
+        {
+            CustomerActivity.showItem();
+        }
     }
 }

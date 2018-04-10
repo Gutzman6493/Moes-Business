@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/itemNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="61dp"
+        android:text="Item Name:" />
+
+    <TextView
+        android:id="@+id/itemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/itemNameLabel"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/itemNameLabel"
+        android:layout_toRightOf="@+id/itemNameLabel"
+        android:text="itemName" />
+
+    <TextView
+        android:id="@+id/itemCostLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/itemNameLabel"
+        android:layout_alignStart="@+id/itemNameLabel"
+        android:layout_below="@+id/itemIdLabel"
+        android:layout_marginTop="12dp"
+        android:text="Item Cost:" />
+
+    <TextView
+        android:id="@+id/itemCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/itemName"
+        android:layout_alignStart="@+id/itemName"
+        android:layout_alignTop="@+id/itemCostLabel"
+        android:text="ItemCost" />
+
+    <TextView
+        android:id="@+id/globalInvLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/itemCostLabel"
+        android:layout_alignStart="@+id/itemCostLabel"
+        android:layout_below="@+id/itemCostLabel"
+        android:layout_marginTop="12dp"
+        android:text="Global Stock:" />
+
+    <TextView
+        android:id="@+id/globalInv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/itemCost"
+        android:layout_alignStart="@+id/itemCost"
+        android:layout_alignTop="@+id/globalInvLabel"
+        android:text="GlobalInv" />
+
+    <TextView
+        android:id="@+id/itemDescLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/backorderLabel"
+        android:layout_toLeftOf="@+id/itemName"
+        android:layout_toStartOf="@+id/itemName"
+        android:text="Item Desc:" />
+
+    <TextView
+        android:id="@+id/itemDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/itemName"
+        android:layout_alignRight="@+id/itemName"
+        android:layout_below="@+id/itemName"
+        android:layout_marginTop="57dp"
+        android:text="ItemDesc" />
+
+    <TextView
+        android:id="@+id/backorderLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/itemDesc"
+        android:layout_toLeftOf="@+id/backorderFlag"
+        android:layout_toStartOf="@+id/backorderFlag"
+        android:text="On BackOrder:" />
+
+    <TextView
+        android:id="@+id/backorderFlag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/backorderLabel"
+        android:layout_alignBottom="@+id/backorderLabel"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="False" />
+</RelativeLayout>
