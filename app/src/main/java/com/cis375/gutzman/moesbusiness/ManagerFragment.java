@@ -22,6 +22,7 @@ public class ManagerFragment extends Fragment
     private Button inventoryBtn;
     private Button statusBtn;
     private Button batchBtn;
+    private Button pastOrdersBtn;
 
     public ManagerFragment(){}
 
@@ -42,11 +43,13 @@ public class ManagerFragment extends Fragment
         inventoryBtn = (Button) view.findViewById(R.id.inventoryBtn);
         statusBtn = (Button) view.findViewById(R.id.statusBtn);
         batchBtn = (Button) view.findViewById(R.id.batchBtn);
+        pastOrdersBtn = (Button) view.findViewById(R.id.pastOrdersBtn);
 
         // Setup listeners
         inventoryBtn.setOnClickListener(this);
         statusBtn.setOnClickListener(this);
         batchBtn.setOnClickListener(this);
+        pastOrdersBtn.setOnClickListener(this);
     }
 
     @Override
@@ -58,8 +61,12 @@ public class ManagerFragment extends Fragment
                 ManagerActivity.showInventory();
                 break;
             case R.id.statusBtn:
+                ManagerActivity.showStatusReport();
                 break;
             case R.id.batchBtn:
+                break;
+            case R.id.pastOrdersBtn:
+                ManagerActivity.showPastOrders();
                 break;
         }
     }

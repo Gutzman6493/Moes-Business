@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:clickable="true">
+
+    <ListView
+        android:id="@+id/ordersList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/firstNameTxt"/>
+
+    <EditText
+        android:id="@+id/firstNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="First Name"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/searchFirstBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/firstNameTxt"
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@+id/firstNameTxt"
+        android:text="Search" />
+
+    <EditText
+        android:id="@+id/lastNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/firstNameTxt"
+        android:layout_marginTop="15dp"
+        android:imeOptions="actionDone"
+        android:ems="10"
+        android:hint="Last name"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/searchLastBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lastNameTxt"
+        android:layout_alignLeft="@+id/searchFirstBtn"
+        android:layout_alignStart="@+id/searchFirstBtn"
+        android:text="Search" />
+
+    <EditText
+        android:id="@+id/itemNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lastNameTxt"
+        android:layout_marginTop="15dp"
+        android:imeOptions="actionDone"
+        android:ems="10"
+        android:hint="Item Name"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/searchItemBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/itemNameTxt"
+        android:layout_alignLeft="@+id/searchLastBtn"
+        android:layout_alignStart="@+id/searchLastBtn"
+        android:text="Search" />
+
+    <EditText
+        android:id="@+id/itemAmtTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/showAllBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="Item Amount"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/searchAmtBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/itemAmtTxt"
+        android:layout_alignLeft="@+id/searchItemBtn"
+        android:layout_alignStart="@+id/searchItemBtn"
+        android:text="Search" />
+
+    <Button
+        android:id="@+id/showAllBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:text="Show All Fulfilled Orders" />
+
+</RelativeLayout>

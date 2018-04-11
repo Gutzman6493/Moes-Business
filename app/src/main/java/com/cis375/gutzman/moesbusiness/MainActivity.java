@@ -32,6 +32,9 @@ public class MainActivity extends Activity
         setContentView(R.layout.activity_main);
 
         // Attempt to make Scanner work for android (WORKS!) Only for assets (Readonly)
+        assetManager = this.getAssets();
+        loadFilledOrders();
+        loadStatusReports();
         if(fileExist("inventory.txt") && fileExist("AccountFile.txt"))
         {
             // If these files exist load them
@@ -41,7 +44,6 @@ public class MainActivity extends Activity
         if(loadFlag)
         {
             // else load default assets
-            assetManager = this.getAssets();
             loadInventoryAssets();
             AllAccounts.addManagerAccounts();
             saveAccountsInternal();
@@ -298,7 +300,78 @@ public class MainActivity extends Activity
         return file.exists();
     }
 
-    // FIXME will be used to run batch files
+    // Load fulfilled orders text file
+    public void loadFilledOrders()
+    {
+        try
+        {
+            Scanner fileInput = new Scanner(assetManager.open("fulfilledOrders.txt"));
+            String fileLine;
+            Order temp = new Order();
+            int count = 0;
+            while (fileInput.hasNextLine())
+            {
+                fileLine = fileInput.nextLine();
+                fileLine = fileLine.replace("\n", " ");
+                String[] fileWords = fileLine.split(" ");
+
+                // if fileWords[0] == order that means you're reading the next order
+                if(fileWords[0].toUpperCase().equals("ORDER"))
+                {
+                    if(count > AllFilledOrdersList.TheOrders.size())
+                    {
+                        AllFilledOrdersList.addOrder(temp);
+                    }
+                    count++;
+                    temp = new Order
+                    (
+                        fileWords[1],       // username
+                        fileWords[2],       // first name
+                        fileWords[3],       // last name
+                        fileWords[4],       // st address
+                        fileWords[5],       // city name
+                        fileWords[6],       // state name
+                        fileWords[7],       // zipcode
+                        fileWords[8],       // subtotal
+                        fileWords[9]        // total
+                    );
+                }
+                // Else you're adding items bought info
+                else if(!fileLine.isEmpty() && !fileWords[0].equals("END"))
+                {
+                    temp.addItemOrdered(fileWords[0], fileWords[1], fileWords[2]);
+                }
+                else if(fileWords[0].equals("END"))
+                {
+                    AllFilledOrdersList.addOrder(temp);
+                    return;
+                }
+            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadStatusReports()
+    {
+        try
+        {
+            Scanner fileInput = new Scanner(assetManager.open("statusreport.txt"));
+            String fileLine;
+            while (fileInput.hasNextLine())
+            {
+                fileLine = fileInput.nextLine();
+                StatusReports.addReport(fileLine);
+            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+    // FIXME will be used to run batch files -- will probably not be used due to other ideas
     public static void runBatchFiles()
     {
         // Order of inputs

@@ -1,6 +1,7 @@
 package com.cis375.gutzman.moesbusiness;
 
 import android.app.Fragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,9 +9,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
+import static android.content.Context.MODE_PRIVATE;
+
 public class CustomerPastOrdersFragment  extends Fragment
 {
     private ListView ordersList;
+    private SharedPreferences prefs;
 
     public CustomerPastOrdersFragment() {}
 
@@ -30,15 +36,31 @@ public class CustomerPastOrdersFragment  extends Fragment
         // Assign widget variables
         ordersList = (ListView) view.findViewById(R.id.ordersList);
 
-        /*
-        for(int i = 0; i < Inventory.TheInventory.size(); i++)
+        // Setup Preferences
+        prefs = this.getActivity().getSharedPreferences("preferences", MODE_PRIVATE);
+
+        String username = prefs.getString("Username", "");
+
+        ArrayList<String> temp = new ArrayList<String>(0);
+        ArrayList<String[]> items;
+        String itemString = "";
+        for(int i = 0; i < AllFilledOrdersList.TheOrders.size(); i++)
         {
-            test.add(Inventory.TheInventory.get(i).getItemName());
+            if(AllFilledOrdersList.TheOrders.get(i).getUsername().equals(username))
+            {
+                items = AllFilledOrdersList.TheOrders.get(i).getPurchasedItems();
+                for(int j = 0; j < items.size(); j++)
+                {
+                    itemString = itemString.concat(items.get(j)[0] + " x " + items.get(j)[1] + " = " + items.get(j)[2] + "\n");
+                }
+                temp.add(itemString);
+            }
+
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1, test);
+                android.R.layout.simple_list_item_1, temp);
 
-        invList.setAdapter(adapter);
-        */
+        ordersList.setAdapter(adapter);
+
     }
 }

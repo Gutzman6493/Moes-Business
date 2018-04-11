@@ -26,6 +26,7 @@ public class CustomerActivity extends Activity
 
         // Get user's account
         customer = AllAccounts.getAccount(prefs.getString("Username", ""));
+        customer.clearCart();
     }
 
     // Add an item to customers cart

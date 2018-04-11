@@ -37,4 +37,22 @@ public class ManagerActivity extends Activity
                 .addToBackStack(null)
                 .commit();
     }
+
+    public static void showPastOrders()
+    {
+        ManagerPastOrdersFragment itemView = new ManagerPastOrdersFragment();
+        fragmentManager.beginTransaction()
+                .add(R.id.fragmentContainer, itemView)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public static void showStatusReport()
+    {
+        ManagerStatusReportFragment itemView = new ManagerStatusReportFragment();
+        fragmentManager.beginTransaction()
+                .add(R.id.fragmentContainer, itemView)
+                .addToBackStack(null)
+                .commit();
+    }
 }

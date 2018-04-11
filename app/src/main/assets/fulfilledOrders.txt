@@ -1,0 +1,6 @@
+order kgutz Kevin Gutzman 6456BurnlySt GardenCity MI 48135 $40025.0 $42426.5
+BlueCar 2 $40000.0
+RedBrick 10 $25
+order bbach Ben Bach 1234SomewhereRd SomeCity MI 12345 $80.0 $84.8
+GreenBall 20 $80
+END

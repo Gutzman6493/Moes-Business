@@ -109,4 +109,10 @@ public class Account
     {
         return shoppingCart;
     }
+
+    // Clear the shopping cart
+    public void clearCart()
+    {
+        this.shoppingCart.clear();
+    }
 }
