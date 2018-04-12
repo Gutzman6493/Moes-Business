@@ -1,2 +1,2 @@
-order(the word to show new order) username firstName lastName stAddress(oneword) cityName(oneword) stateInt zipcode subtotal total
-itemName itemQuantity itemCost(cost*quantity)
+order(the word to show new order) username firstName lastName stAddress(oneword) cityName(oneword) stateInt zipcode subtotal total orderId
+itemName itemQuantity itemCost(cost*quantity) discountRate

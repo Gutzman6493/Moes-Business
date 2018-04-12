@@ -1,0 +1,6 @@
+HD 0053      2017-04-12
+CAAA00100001Kevin Gutzman                 6456 Burnly St       Garden City         MI481350123000
+I0000100001000
+L001
+O001
+T 0003

@@ -23,7 +23,8 @@ public class MainActivity extends Activity
     private boolean loadFlag = true;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) 
+    {
         super.onCreate(savedInstanceState);
         // Assign layout and fragmentManager
         fragmentManager = getFragmentManager();
@@ -333,13 +334,15 @@ public class MainActivity extends Activity
                         fileWords[6],       // state name
                         fileWords[7],       // zipcode
                         fileWords[8],       // subtotal
-                        fileWords[9]        // total
+                        fileWords[9],       // total
+                        fileWords[10]       // orderID       
                     );
                 }
                 // Else you're adding items bought info
                 else if(!fileLine.isEmpty() && !fileWords[0].equals("END"))
                 {
-                    temp.addItemOrdered(fileWords[0], fileWords[1], fileWords[2]);
+                    // ItemName, itemQuantity, itemCost, itemDiscountRate
+                    temp.addItemOrdered(fileWords[0], fileWords[1], fileWords[2], fileWords[3]);
                 }
                 else if(fileWords[0].equals("END"))
                 {

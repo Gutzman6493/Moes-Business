@@ -122,12 +122,14 @@ public class ManagerPastOrdersFragment extends Fragment
             if(AllFilledOrdersList.TheOrders.get(i).getFirstName().toUpperCase().equals(firstName))
             {
                 items = AllFilledOrdersList.TheOrders.get(i).getPurchasedItems();
-                itemString = itemString.concat(AllFilledOrdersList.TheOrders.get(i).getFirstName() + " " +
+                itemString = itemString.concat(AllFilledOrdersList.TheOrders.get(i).getOrderId() + " " +
+                                                AllFilledOrdersList.TheOrders.get(i).getFirstName() + " " +
                                                 AllFilledOrdersList.TheOrders.get(i).getLastName() + " " +
                                                 AllFilledOrdersList.TheOrders.get(i).getTotal() + "\n");
                 for(int j = 0; j < items.size(); j++)
                 {
-                    itemString = itemString.concat(items.get(j)[0] + " x " + items.get(j)[1] + " = " + items.get(j)[2] + "\n");
+                    itemString = itemString.concat(items.get(j)[0] + " x " + items.get(j)[1] + " = " + items.get(j)[2] +
+                                                    " - Sale %: " + items.get(j)[3] + "%\n");
                 }
                 temp.add(itemString);
                 itemString = "";
@@ -158,12 +160,14 @@ public class ManagerPastOrdersFragment extends Fragment
             if(AllFilledOrdersList.TheOrders.get(i).getLastName().toUpperCase().equals(lastName))
             {
                 items = AllFilledOrdersList.TheOrders.get(i).getPurchasedItems();
-                itemString = itemString.concat(AllFilledOrdersList.TheOrders.get(i).getFirstName() + " " +
+                itemString = itemString.concat(AllFilledOrdersList.TheOrders.get(i).getOrderId() + " " +
+                                                AllFilledOrdersList.TheOrders.get(i).getFirstName() + " " +
                                                 AllFilledOrdersList.TheOrders.get(i).getLastName() + " " +
                                                 AllFilledOrdersList.TheOrders.get(i).getTotal() + "\n");
                 for(int j = 0; j < items.size(); j++)
                 {
-                    itemString = itemString.concat(items.get(j)[0] + " x " + items.get(j)[1] + " = " + items.get(j)[2] + "\n");
+                    itemString = itemString.concat(items.get(j)[0] + " x " + items.get(j)[1] + " = " + items.get(j)[2] +
+                                                    " - Sale %: " + items.get(j)[3] + "%\n");
                 }
                 temp.add(itemString);
                 itemString = "";
@@ -202,13 +206,15 @@ public class ManagerPastOrdersFragment extends Fragment
             }
             if(found)
             {
-                itemString = itemString.concat(AllFilledOrdersList.TheOrders.get(i).getFirstName() + " " +
+                itemString = itemString.concat(AllFilledOrdersList.TheOrders.get(i).getOrderId() + " " +
+                        AllFilledOrdersList.TheOrders.get(i).getFirstName() + " " +
                         AllFilledOrdersList.TheOrders.get(i).getLastName() + " " +
                         AllFilledOrdersList.TheOrders.get(i).getTotal() + "\n");
 
                 for(int k = 0; k < items.size(); k++)
                 {
-                    itemString = itemString.concat(items.get(k)[0] + " x " + items.get(k)[1] + " = " + items.get(k)[2] + "\n");
+                    itemString = itemString.concat(items.get(k)[0] + " x " + items.get(k)[1] + " = " + items.get(k)[2] +
+                                                    " - Sale %: " + items.get(k)[3] + "%\n");
                 }
                 temp.add(itemString);
                 itemString = "";
@@ -248,13 +254,15 @@ public class ManagerPastOrdersFragment extends Fragment
             }
             if(found)
             {
-                itemString = itemString.concat(AllFilledOrdersList.TheOrders.get(i).getFirstName() + " " +
+                itemString = itemString.concat(AllFilledOrdersList.TheOrders.get(i).getOrderId() + " " +
+                        AllFilledOrdersList.TheOrders.get(i).getFirstName() + " " +
                         AllFilledOrdersList.TheOrders.get(i).getLastName() + " " +
                         AllFilledOrdersList.TheOrders.get(i).getTotal() + "\n");
 
                 for(int k = 0; k < items.size(); k++)
                 {
-                    itemString = itemString.concat(items.get(k)[0] + " x " + items.get(k)[1] + " = " + items.get(k)[2] + "\n");
+                    itemString = itemString.concat(items.get(k)[0] + " x " + items.get(k)[1] + " = " + items.get(k)[2] +
+                                                    " - Sale %: " + items.get(k)[3] + "%\n");
                 }
                 temp.add(itemString);
                 itemString = "";
@@ -274,13 +282,15 @@ public class ManagerPastOrdersFragment extends Fragment
         String itemString = "";
         for(int i = 0; i < AllFilledOrdersList.TheOrders.size(); i++)
         {
-            itemString = itemString.concat(AllFilledOrdersList.TheOrders.get(i).getFirstName() + " " +
+            itemString = itemString.concat(AllFilledOrdersList.TheOrders.get(i).getOrderId() + " " +
+                    AllFilledOrdersList.TheOrders.get(i).getFirstName() + " " +
                     AllFilledOrdersList.TheOrders.get(i).getLastName() + " " +
                     AllFilledOrdersList.TheOrders.get(i).getTotal() + "\n");
             items = AllFilledOrdersList.TheOrders.get(i).getPurchasedItems();
             for(int j = 0; j < items.size(); j++)
             {
-                itemString = itemString.concat(items.get(j)[0] + " x " + items.get(j)[1] + " = " + items.get(j)[2] + "\n");
+                itemString = itemString.concat(items.get(j)[0] + " x " + items.get(j)[1] + " = " + items.get(j)[2] +
+                                                " - Sale %: " + items.get(j)[3] + "%\n");
             }
             temp.add(itemString);
             itemString = "";

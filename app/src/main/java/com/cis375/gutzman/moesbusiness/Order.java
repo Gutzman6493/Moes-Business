@@ -24,6 +24,7 @@ public class Order
     private String zipcode;
     private String subtotal;
     private String total;
+    private String orderId;
     ArrayList<String[]> purchasedItems;
 
     Order()
@@ -33,7 +34,7 @@ public class Order
 
     Order(String username, String firstName, String lastName,
           String stAddress, String cityName, String stateName, String zipcode,
-          String subtotal, String total)
+          String subtotal, String total, String orderId)
     {
         this.username = username;
         this.firstName = firstName;
@@ -44,6 +45,7 @@ public class Order
         this.zipcode = zipcode;
         this.subtotal = subtotal;
         this.total = total;
+        this.orderId = orderId;
         purchasedItems = new ArrayList<String[]>(0);
     }
 
@@ -116,6 +118,11 @@ public class Order
         return subtotal;
     }
 
+    public String getOrderId()
+    {
+        return orderId;
+    }
+
     public String getTotal() {
         return total;
     }
@@ -124,9 +131,9 @@ public class Order
         return purchasedItems;
     }
 
-    public void addItemOrdered(String itemName, String itemQuantity, String itemCost)
+    public void addItemOrdered(String itemName, String itemQuantity, String itemCost, String discountRate)
     {
-        String[] boughtItem = {itemName, itemQuantity, itemCost};
+        String[] boughtItem = {itemName, itemQuantity, itemCost, discountRate};
         purchasedItems.add(boughtItem);
     }
 }

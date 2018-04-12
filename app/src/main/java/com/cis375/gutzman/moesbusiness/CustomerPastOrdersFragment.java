@@ -49,11 +49,14 @@ public class CustomerPastOrdersFragment  extends Fragment
             if(AllFilledOrdersList.TheOrders.get(i).getUsername().equals(username))
             {
                 items = AllFilledOrdersList.TheOrders.get(i).getPurchasedItems();
+                itemString = itemString.concat(AllFilledOrdersList.TheOrders.get(i).getOrderId() + "\n");
                 for(int j = 0; j < items.size(); j++)
                 {
-                    itemString = itemString.concat(items.get(j)[0] + " x " + items.get(j)[1] + " = " + items.get(j)[2] + "\n");
+                    itemString = itemString.concat(items.get(j)[0] + " x " + items.get(j)[1] + " = " + items.get(j)[2] + " - Sale %: " +
+                                                    items.get(j)[3] + "%\n");
                 }
                 temp.add(itemString);
+                itemString = "";
             }
 
         }
