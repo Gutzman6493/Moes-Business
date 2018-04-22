@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class AllAccounts
 {
     static ArrayList<Account> TheAccounts = new ArrayList<Account>(0);
+
     // For development purposes (managers login info kept here in array)
     private static String[][] managers = new String[][]
             {
@@ -78,18 +79,6 @@ public class AllAccounts
         }
         return "ACCOUNT NOT FOUND";
     }// End handleForgotPassword
-
-    // For development purposes till fixed later
-    public static void addManagerAccounts()
-    {
-        for(int i = 0; i < managers.length; i++)
-        {
-            Account temp = new Account(managers[i][0], managers[i][1]);
-            temp.setManagerFlag(true);
-            AllAccounts.addAccount(temp);
-        }
-
-    }// End addManagerAccounts
 
     // Get the customer's account
     public static Account getAccount(String username)

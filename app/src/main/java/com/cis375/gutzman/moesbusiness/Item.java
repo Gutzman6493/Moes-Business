@@ -27,7 +27,6 @@ public class Item
     Item(String itemName, String category, int itemId, double itemCost, int itemReorderValue, int minOpAmount,
         String vendorName, long globalInv, long wh1Inv, long wh2Inv, long wh3Inv, long wh4Inv, long wh5Inv,
          long wh6Inv, long wh7Inv, long wh8Inv, String itemDesc)
-    //FIXME ADD VENDOR INFO WHEN VENDOR CLASS IS MADE
     {
         this.itemName = itemName;
         this.category = category;

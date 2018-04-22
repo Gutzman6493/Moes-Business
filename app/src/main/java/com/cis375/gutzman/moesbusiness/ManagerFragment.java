@@ -21,8 +21,9 @@ public class ManagerFragment extends Fragment
 {
     private Button inventoryBtn;
     private Button statusBtn;
-    private Button batchBtn;
+    private Button vendorShipmentsBtn;
     private Button pastOrdersBtn;
+    private Button warehouseBtn;
 
     public ManagerFragment(){}
 
@@ -42,14 +43,16 @@ public class ManagerFragment extends Fragment
         // Assign widget variables
         inventoryBtn = (Button) view.findViewById(R.id.inventoryBtn);
         statusBtn = (Button) view.findViewById(R.id.statusBtn);
-        batchBtn = (Button) view.findViewById(R.id.batchBtn);
+        vendorShipmentsBtn = (Button) view.findViewById(R.id.vendorShipmentsBtn);
         pastOrdersBtn = (Button) view.findViewById(R.id.pastOrdersBtn);
+        warehouseBtn = (Button) view.findViewById(R.id.warehouseBtn);
 
         // Setup listeners
         inventoryBtn.setOnClickListener(this);
         statusBtn.setOnClickListener(this);
-        batchBtn.setOnClickListener(this);
+        vendorShipmentsBtn.setOnClickListener(this);
         pastOrdersBtn.setOnClickListener(this);
+        warehouseBtn.setOnClickListener(this);
     }
 
     @Override
@@ -60,10 +63,14 @@ public class ManagerFragment extends Fragment
             case R.id.inventoryBtn:
                 ManagerActivity.showInventory();
                 break;
+            case R.id.warehouseBtn:
+                ManagerActivity.showWarehouseSelection();
+                break;
             case R.id.statusBtn:
                 ManagerActivity.showStatusReport();
                 break;
-            case R.id.batchBtn:
+            case R.id.vendorShipmentsBtn:
+                ManagerActivity.showVendorShipments();
                 break;
             case R.id.pastOrdersBtn:
                 ManagerActivity.showPastOrders();

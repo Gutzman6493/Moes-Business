@@ -25,34 +25,43 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/businessTitle"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="30dp"
         android:text="View Inventory" />
+
+    <Button
+        android:id="@+id/warehouseBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Warehouse Inventory"
+        android:layout_below="@+id/inventoryBtn"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/statusBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/inventoryBtn"
+        android:layout_below="@+id/warehouseBtn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="15dp"
         android:text="View Status Report" />
 
     <Button
-        android:id="@+id/batchBtn"
+        android:id="@+id/vendorShipmentsBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/statusBtn"
-        android:layout_marginTop="30dp"
-        android:text="Handle Batch Files" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="View Todays Vendor SHipments" />
 
     <Button
         android:id="@+id/pastOrdersBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/batchBtn"
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/vendorShipmentsBtn"
+        android:layout_marginTop="15dp"
         android:text="View Fulfilled Orders" />
 
 </RelativeLayout>

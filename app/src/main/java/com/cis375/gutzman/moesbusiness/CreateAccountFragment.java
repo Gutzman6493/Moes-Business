@@ -161,6 +161,8 @@ public class CreateAccountFragment extends Fragment
         userAccounts.addAccount(temp);
         return true;
     }// End handleCreate
+
+    // Function is used to save accounts to internal memory
     public void saveAccountsInternal()
     {
         String FILE_NAME = "AccountFile.txt";

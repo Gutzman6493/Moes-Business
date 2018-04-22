@@ -17,11 +17,29 @@ public class Account
     private String zipCode;
     private String city;
     private String state;
+    private String id;
     private boolean managerFlag = false;
     private ArrayList<String[]> shoppingCart;
 
     public Account() {} // Empty Constructor
 
+    // Constructor for reading in customer accounts from file
+    public Account(String username, String password, String id, String firstName,
+                   String lastName, String stAddress, String city, String state, String zipCode)
+    {
+        this.username = username;
+        this.password = password;
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.stAddress = stAddress;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+        shoppingCart = new ArrayList<String[]>(0);
+    }
+
+    // Constructor for reading in manager accounts from file
     public Account(String username, String password)
     {
         this.username = username;
@@ -78,25 +96,19 @@ public class Account
     {
         return managerFlag;
     }
-    // END GETTERS AND SETTERS
-
-    // View pastOrders
-    public String viewPastOrders()
-    {
-        // Files will be (global || username)Orders.txt
-        // If manager load the global order list
-        if(managerFlag)
-        {
-
-        }
-        // If customer load the customers order file
-        else
-        {
-
-        }
-
-        return "Fuck off";
+    public String getStAddress() {
+        return stAddress;
     }
+    public String getZipCode() {
+        return zipCode;
+    }
+    public String getCity() {
+        return city;
+    }
+    public String getState() {
+        return state;
+    }
+    // END GETTERS AND SETTERS
 
     public void addToCart(String itemName, String itemAmount)
     {

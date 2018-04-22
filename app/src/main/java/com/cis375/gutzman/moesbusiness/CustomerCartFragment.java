@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -79,6 +80,20 @@ public class CustomerCartFragment extends Fragment
     @Override
     public void onClick(View view)
     {
-
+        switch(view.getId())
+        {
+            case R.id.checkOutBtn:
+                if(CustomerActivity.customer.getShoppingCart().isEmpty())
+                {
+                    Toast.makeText(this.getActivity().getApplicationContext(),
+                            "Your cart is empty. Please add items to buy them",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    CustomerActivity.showInvoice(this);
+                }
+                break;
+        }
     }
 }

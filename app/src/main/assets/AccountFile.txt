@@ -1,3 +1,6 @@
 moe moe01
 root root01
 admin admin01
+kgutz k 00001 Kevin Gutzman 6456BurnlySt GardenCity MI 48135
+bbach b 00002 Ben Bach 1234SomewhereRd SomeCity MI 12345
+psteiner s 00003 Prof Steiner 4321SomewhereSt TheCity MI 12348

@@ -3,5 +3,6 @@
     <String name="Username"></String>
     <boolean name="AppFirstRun">true</boolean>
     <boolean name="accountFlag">false</boolean>
+    <int name="warehouseNum">1</int>
     <int name="itemIndex">0</int>
 </map>

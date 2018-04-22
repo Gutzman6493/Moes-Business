@@ -1,6 +1,7 @@
 package com.cis375.gutzman.moesbusiness;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -75,6 +76,24 @@ public class CustomerActivity extends Activity
         fragmentManager.beginTransaction()
                 .add(R.id.fragmentContainer, itemView)
                 .addToBackStack(null)
+                .commit();
+    }
+    // Show customer's invoice
+    public static void showInvoice(Fragment frag)
+    {
+        removeFrag(frag);
+        CustomerInvoiceFragment itemView = new CustomerInvoiceFragment();
+        fragmentManager.beginTransaction()
+                .add(R.id.fragmentContainer, itemView)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    // Remove fragment
+    public static void removeFrag(Fragment frag)
+    {
+        fragmentManager.beginTransaction()
+                .remove(frag)
                 .commit();
     }
 }

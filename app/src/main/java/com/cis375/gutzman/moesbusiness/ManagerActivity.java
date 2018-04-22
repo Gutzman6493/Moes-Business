@@ -55,4 +55,31 @@ public class ManagerActivity extends Activity
                 .addToBackStack(null)
                 .commit();
     }
+
+    public static void showVendorShipments()
+    {
+        ManagerVendorShipmentFragment itemView = new ManagerVendorShipmentFragment();
+        fragmentManager.beginTransaction()
+                .add(R.id.fragmentContainer, itemView)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public static void showWarehouseSelection()
+    {
+        ManagerWarehouseSelectFragment itemView = new ManagerWarehouseSelectFragment();
+        fragmentManager.beginTransaction()
+                .add(R.id.fragmentContainer, itemView)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public static void showNumWarehouseInv()
+    {
+        ManagerWarehouseInventoryFragment itemView = new ManagerWarehouseInventoryFragment();
+        fragmentManager.beginTransaction()
+                .add(R.id.fragmentContainer, itemView)
+                .addToBackStack(null)
+                .commit();
+    }
 }

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/invoiceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:text="invoice"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/nameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:text="Name: "
+        android:textAlignment="textStart" />
+
+    <TextView
+        android:id="@+id/stAddressTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/nameTxt"
+        android:layout_alignStart="@+id/nameTxt"
+        android:layout_below="@+id/nameTxt"
+        android:layout_marginTop="15dp"
+        android:text="St Address:" />
+
+    <TextView
+        android:id="@+id/cityTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/stAddressTxt"
+        android:layout_alignStart="@+id/stAddressTxt"
+        android:layout_below="@+id/stAddressTxt"
+        android:layout_marginTop="15dp"
+        android:text="City:" />
+
+    <TextView
+        android:id="@+id/stateTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cityTxt"
+        android:layout_alignStart="@+id/cityTxt"
+        android:layout_below="@+id/cityTxt"
+        android:layout_marginTop="15dp"
+        android:text="State:" />
+
+    <TextView
+        android:id="@+id/zipTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/stateTxt"
+        android:layout_alignStart="@+id/stateTxt"
+        android:layout_below="@+id/stateTxt"
+        android:layout_marginTop="15dp"
+        android:text="Zipcode:" />
+
+    <TextView
+        android:id="@+id/subtotalTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/zipTxt"
+        android:layout_alignRight="@+id/zipTxt"
+        android:layout_below="@+id/zipTxt"
+        android:layout_marginTop="50dp"
+        android:text="Subtotal:" />
+
+    <TextView
+        android:id="@+id/totalTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/subtotalTxt"
+        android:layout_alignStart="@+id/subtotalTxt"
+        android:layout_below="@+id/subtotalTxt"
+        android:layout_marginTop="15dp"
+        android:text="Total:" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/nameTxt"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/stAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/stAddressTxt"
+        android:layout_alignBottom="@+id/stAddressTxt"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignStart="@+id/name"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/stAddress"
+        android:layout_alignStart="@+id/stAddress"
+        android:layout_alignBaseline="@+id/cityTxt"
+        android:layout_alignBottom="@+id/cityTxt"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/stateTxt"
+        android:layout_alignBottom="@+id/stateTxt"
+        android:layout_alignLeft="@+id/city"
+        android:layout_alignStart="@+id/city"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/zipcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/zipTxt"
+        android:layout_alignBottom="@+id/zipTxt"
+        android:layout_alignLeft="@+id/state"
+        android:layout_alignStart="@+id/state" />
+
+    <TextView
+        android:id="@+id/subtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/subtotalTxt"
+        android:layout_alignBottom="@+id/subtotalTxt"
+        android:layout_alignLeft="@+id/zipcode"
+        android:layout_alignStart="@+id/zipcode"/>
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/subtotal"
+        android:layout_alignStart="@+id/subtotal"
+        android:layout_alignBaseline="@+id/totalTxt"
+        android:layout_alignBottom="@+id/totalTxt" />
+
+    <ListView
+        android:id="@+id/itemList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/invoiceLabel"
+        android:layout_above="@id/nameTxt"
+        android:layout_marginBottom="25dp"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
